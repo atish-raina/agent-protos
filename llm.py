@@ -47,6 +47,25 @@ Rules:
 """
 
 
+def get_ad_spend(date_range: str) :
+    return {
+        date_range: date_range,
+        amount: $150,
+
+    }
+
+def get_ad_count(status: str):
+    return {
+        status: status,
+        count: 42,
+    }
+
+def run_tool(tool_name: str, tool_input: dict):
+    if tool_name == "get_ad_spend":
+        return get_ad_spend(tool_input["date_range"])
+    elif tool_name == "get_ad_count":
+        return get_ad_count(tool_input["status"])
+
 
 def call_llm(prompt: str) :
 
